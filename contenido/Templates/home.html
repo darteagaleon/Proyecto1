@@ -20,7 +20,11 @@
             <th scope="row">{{curso.nomCurso}}</th>
             <th scope="row">{{curso.descripcion}}</th>
             <th scope="row">{{curso.duracion}}</th>
-            <th scope="row">{{curso.estado}}</th>
+            {% if curso.estado %}
+                <th scope="row">Activo</th>
+            {% else %}
+                <th scope="row">Inactivo</th>
+            {% endif %}
             <th scope="row">{{curso.nombreDpto}}</th>
             <td>
                 <a class="btn btn-danger" href="">Eliminar</a>
