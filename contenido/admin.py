@@ -9,6 +9,6 @@ class Area(admin.ModelAdmin):
 admin.site.register(Dpto,Area)
 
 class regCursos(admin.ModelAdmin):
-    list_display=['id','nomCurso','descripcion']
+    list_display=['id','nomCurso','descripcion','nombreDpto']
 admin.site.register(gestionCursos, regCursos)
 
