@@ -6,4 +6,6 @@ from . import views
 urlpatterns = [
     path('', views.home,name="home"),
     path('agregar/', views.agregar,name="agregar"),
+    path('eliminar/<int:curso_id>/', views.eliminar,name="eliminar"),
+    path('editar/<int:curso_id>/', views.editar,name="editar"),
 ]

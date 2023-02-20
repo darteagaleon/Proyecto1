@@ -17,3 +17,20 @@ def agregar(request):
         form= agregarCurso()
     context={'form':form}
     return render(request,'agregar.html',context)
+
+def editar(request,curso_id):
+    Curso=gestionCursos.objects.get(id=curso_id)
+    if request.method=="POST":
+        form=agregarCurso(request.POST, instance=Curso)
+        if form.is_valid():
+            form.save()
+        return redirect("home")
+    else:
+        form=agregarCurso(instance=Curso)
+    context={"form":form}
+    return render(request,"editar.html",context)
+
+def eliminar(request,curso_id):
+    Curso=gestionCursos.objects.get(id=curso_id)
+    Curso.delete()
+    return redirect('home')
