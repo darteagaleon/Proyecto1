@@ -1,8 +1,101 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="container">
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    h1{
+        position:relative;
+        top:20px;
+        margin:0 auto;      
+        width:260px;
+    }
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.015);
+        font-family: "Poppins", sans-serif;
+        margin:0 auto;
+        position:relative;
+        top:30px;
+    }
+
+    .content-table thead tr {
+        background-color: #009879;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .content-table th,
+    .content-table td {
+        padding: 12px 15px;
+    }
+
+    .content-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .content-table tbody tr:nth-of-type(even) {
+        background-color: #353836;
+    }
+
+    .content-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    .eliminar {
+        background: rgb(131, 6, 6);
+        background: linear-gradient(0deg, rgb(131, 6, 6) 0%, rgb(180, 12, 12) 100%);
+        border: none;
+        width: 80px;
+        height: 30px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .eliminar a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .eliminar:hover {
+        background: rgb(255, 0, 0);
+        background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(251, 2, 2) 100%);
+    }
+    .editar {
+        background: rgb(6,14,131);
+        background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+        border: none;
+        width: 80px;
+        height: 30px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .editar a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .editar:hover {
+        background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+    }
+
+
+
+
+
+    
+</style>
+
 <h1>Lista de Cursos</h1>
-<table class="table table-dark table-striped">
+<table class="content-table">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -11,6 +104,7 @@
             <th scope="col">Duracion</th>
             <th scope="col">Estado</th>
             <th scope="col">Departamento</th>
+            <th scope="col">Eliminar/Editar</th>
         </tr>
     </thead>
     <tbody>
@@ -21,14 +115,14 @@
             <th scope="row">{{curso.descripcion}}</th>
             <th scope="row">{{curso.duracion}}</th>
             {% if curso.estado %}
-                <th scope="row">Activo</th>
+            <th scope="row">Activo</th>
             {% else %}
-                <th scope="row">Inactivo</th>
+            <th scope="row">Inactivo</th>
             {% endif %}
             <th scope="row">{{curso.nombreDpto}}</th>
             <td>
-                <a class="btn btn-danger" href="{% url 'eliminar' curso.id %}">Eliminar</a>
-                <a class="btn btn-primary" href="{% url 'editar' curso.id %}">Editar</a>
+                <button class="eliminar"><a  href="{% url 'eliminar' curso.id %}">Eliminar</a></button>
+                <button class="editar"><a href="{% url 'editar' curso.id %}">Editar</a></button>
             </td>
         </tr>
         {% endfor %}
