@@ -4,9 +4,18 @@
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
-        {{ form.nomCurso }}
+            <!-- <label class="required" for="id_nomCurso">NomCurso:</label>
+            <input type="text" name="nomCurso" class="vTextField" maxlength="100" required="" id="id_nomCurso">
+            <label class="required" for="id_descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" class="vTextField" maxlength="1000" required="" id="id_descripcion">
+            <label class="required" for="id_duracion">Duracion:</label>
+            <input type="text" name="duracion" class="vTextField" maxlength="3" required="" id="id_duracion">
+            <input type="checkbox" name="estado" id="id_estado"><label class="vCheckboxLabel"
+                for="id_estado">Estado</label>
+            <label class="required" for="id_nombreDpto">NombreDpto:</label> -->
+            {{ form }}
         </div>
         <button type="submit"> Agregar Tarea </button>
     </form>
-    </div>
+</div>
 {% endblock %}
