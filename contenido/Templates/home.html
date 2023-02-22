@@ -103,7 +103,7 @@ background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
             <th scope="col">Descripción</th>
             <th scope="col">Duracion</th>
             <th scope="col">Estado</th>
-            <th scope="col">Departamento</th>
+           <th scope="col"><a href="./Depto.html">Departamento</a></th>
             <th scope="col">Eliminar/Editar</th>
         </tr>
     </thead>
@@ -123,10 +123,17 @@ background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
             <td>
                 <button class="eliminar"><a  href="{% url 'eliminar' curso.id %}">Eliminar</a></button>
                 <button class="editar"><a href="{% url 'editar' curso.id %}">Editar</a></button>
+                
             </td>
         </tr>
-        {% endfor %}
     </tbody>
 </table>
+        {% endfor %}
+        {% for dpto in Curso %}
+          {{dpto.nombreDpto}}
+            <button><a  href="{% url 'eliminarDpto' dpto.id %}">EL</a></button>
+        
+        {% endfor %}
+
 </div>
 {% endblock %}
