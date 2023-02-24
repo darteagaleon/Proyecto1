@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    background-color: #353836;
+
+}
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1f1d;
+    color: white;
+    position:static;
+}
+.navbar-links {
+    height: 100%;
+    font-size: 20px;
+}
+
+.navbar-links ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navbar-links ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-links ul li {
+    list-style: none;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.navbar-links ul li {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.brand-title,
+ul li:hover {
+    transform: scale(1.1);
+    /*codigo para que el texto resalte cuando se pasa el cursor por encima de el*/
+    transition: 0.3s;
+}
+
+#login,
+#signup {
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin-bottom: 5px;
+}
+
+#login {
+    border: 1px solid #04943c;
+}
+
+#signup {
+    border: 1px solid #ED413E;
+}
+
+#signup a {
+    color: #ED413E;
+}
+
+#login a {
+    color: #04943c;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*----CODIGO PARA EL RESPONSIVE DEL BAR MENU*/
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        position:fixed;;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: 1rem;
+        margin-top: 30px;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+    .logo{
+        width: 75px;
+    } 
+}

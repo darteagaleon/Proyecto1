@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import agregarCurso
+from django.http import HttpResponse
 
 
 # Create your views here.
+def layout(request):
+    context={}
+    return render(request,'layout.html',context)
+
 def home(request):
     Curso=gestionCursos.objects.all()
     context={'Curso':Curso}
