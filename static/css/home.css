@@ -1,0 +1,94 @@
+
+
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    h1{
+        position:relative;
+        color: #00a650;
+        top:20px;
+        margin:0 auto;      
+        width:360px;
+        padding-bottom: 30px;
+    }
+table{
+    background: linear-gradient(to right, #ecf2f6, #eef1f7, #f1f0f7, #f5f0f6, #f8eff3);
+}
+#tablam{
+    border-radius: 15px;
+
+}
+
+    thead{
+        background-color: #00a650;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px black;
+        font-size: 20px;
+    }
+
+    tbody{
+        color: black;
+        
+    }
+    tbody:hover{
+        background-color: #63bc8f98  ;
+        color: white;
+        text-shadow: 1px 1px black;
+    }
+
+    /* ------------------------------ estilo de los botones -----------------*/
+    .eliminar {
+        background: linear-gradient(to bottom, #e78481, #e47673, #e06864, #db5a56, #d64b47);
+        border: none;
+        width: 80px;
+        height: 30px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .eliminar a {
+        color: black;
+        text-decoration: none;
+    }
+    .eliminar a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    .eliminar:hover {
+        background: linear-gradient(to bottom, #e52e28, #de2720, #d71f18, #cf160f,#c80a05);
+        transition: 2s;
+        text-decoration: none;   
+    }
+
+     /* -------------------------------boton editar -------------------------- */ 
+    .editar {
+        background: linear-gradient(to bottom, #e6d6b0, #e4ce99, #e3c582, #e2bc6b, #e0b354);
+        border: none;
+        width: 80px;
+        height: 30px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+    }
+
+
+    .editar a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .editar a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    .editar:hover {
+        background: linear-gradient(to bottom, #ecc56c, #e9bc59, #e5b246, #e2a931, #df9f16);
+        transition: 2s;
+        text-decoration: none;
+    }
+    

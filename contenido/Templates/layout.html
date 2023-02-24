@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=" {% static 'css/layout.css' %}">
     <title>Proyecto1</title>
+    
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="brand-title"><a href="#">Our Company</a></div>
+        <div class="brand-title"><a href="{% url 'home' %}"><img class="logo" src="{% static "img/Logo-Web-Cyres-de-Colombia-removebg-preview.ico" %}"></a></div>
         <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -18,151 +21,15 @@
         </a>
         <div class="navbar-links">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">PRoducts</a></li>
-                <li><a href="#">About</a> </li>
-                <li id="login"><a href="#">Login</a></li>
-                <li id="signup"><a href="#">Sing up</a></li>
+                <li><a href="{% url 'home' %}">Cursos</a></li>
+                <li><a href="{% url 'agregar' %}">AddCursos</a></li>
+                <li><a href="https://cyresdecolombia.com/">AboutUs</a> </li>
+                <li><a href="{% url 'Departa' %}">Departamentos</a></li>
+                <li id="login"><a href="#">LogIn</a></li>
+                <li id="signup"><a href="#">LogOut</a></li>
         </div>
     </nav>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-        margin: 0;
-        padding: 0;
-        color: white;
-        font-family: "Poppins",sans-serif;        
-        background-color: #353836;
-        
-    }
-    
-    .navbar {
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #1d1f1d;
-        color: white;
-        
-    }
-    
-    .brand-title {
-    }
-    .brand-title a {
-        color: #09c372;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    
-    .navbar-links {
-        height: 100%;
-        font-size: 20px;
-        margin-bottom: -10px;
-    }
-    
-    .navbar-links ul {
-        list-style: none;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        
-    }
-    .navbar-links ul a{
-        color: white;
-        text-decoration: none;
-    }
-    .navbar-links ul li {
-        list-style: none;
-        padding: 5px;
-        margin-left: 10px;
-    }
-    
-    .navbar-links ul li {
-        display: block;
-        text-decoration: none;
-        color: white;
-        padding: 10px;
-    }
-    .brand-title,ul li:hover{
-        transform: scale(1.1);/*codigo para que el texto resalte cuando se pasa el cursor por encima de el*/
-        transition: 0.3s;
-    }
-    #login,#signup{
-        border-radius: 5px;
-        padding: 2px 4px;
-        margin-bottom: 20px;
-    }
-    #login{
-        border: 1px solid #498afb;
-    }
-    #signup{
-        border: 1px solid #ff3860;
-    }
-    #signup a{
-        color: #ff3860;
-    }
-    #login a{
-        color: #498afb;
-    }
-    .toggle-button {
-        position: absolute;
-        top: .75rem;
-        right: 1rem;
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
-    }
-    
-    .toggle-button .bar {
-        height: 3px;
-        width: 100%;
-        background-color: white;
-        border-radius: 10px;
-    }
-    /*----CODIGO PARA EL RESPONSIVE DEL BAR MENU*/
-    @media (max-width: 800px) {
-        .navbar {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    
-        .toggle-button {
-            display: flex;
-        }
-        
-        .navbar-links {
-            display: none;
-            width: 100%;
-        }
-        
-        .navbar-links ul {
-            width: 100%;
-            flex-direction: column;
-        }
-        
-        .navbar-links ul li {
-            text-align: center;
-        }
-        
-        .navbar-links ul li a {
-            padding: 1rem;
-            margin-top: 30px;
-        }
-        
-        .navbar-links.active {
-            display: flex;
-        }
-    }
-</style>
+
 <script>
     const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
