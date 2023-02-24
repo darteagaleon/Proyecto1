@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import agregarCurso
 from django.http import HttpResponse
+from tkinter import *
+from tkinter import messagebox as MessageBox
 
 
 # Create your views here.
@@ -48,8 +50,25 @@ def eliminar(request,curso_id):
 #VISTAS DE DEPARTAMENTO
 def eliminarDpto(request,dpto_id):
     Depto=Dpto.objects.get(id=dpto_id)
-    Depto.delete()
-    return redirect('home')
+    consulta=gestionCursos.objects.filter(nombreDpto=dpto_id)
+    if consulta:
+        MessageBox.showerror("Error", 
+    "El departamento tiene cursos asignados.")
+        return redirect('homedpto')
+    else:
+        resultado = MessageBox.askquestion("Eliminar", 
+    "¿Está seguro que desea Eliminar este departamento?")
+
+        if resultado == "yes":
+            Depto.delete()
+            MessageBox.showerror("OK", 
+            "El departamento ha sido eliminado.")
+    return redirect('homedpto')
+
+def homedpto(request):
+    Dptos=Dpto.objects.all()
+    context={'Dptos':Dptos}
+    return render(request,'Deptor.html',context)
 # def editarDpto(request,curso_id):
 #     Curso=gestionCursos.objects.get(id=curso_id)
 #     if request.method=="POST":
