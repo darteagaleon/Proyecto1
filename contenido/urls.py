@@ -12,9 +12,11 @@ urlpatterns = [
     
     path('eliminar/<int:curso_id>/', views.eliminar,name="eliminar"),
     path('editar/<int:curso_id>/', views.editar,name="editar"),
-    path('homedpto/', views.homedpto,name="homedpto"),
+    #Ruta de Departamento
+    path('Departa',views.Departa,name="Departa"),
+
     path('eliminarDpto/<int:dpto_id>/', views.eliminarDpto,name="eliminarDpto"),
-    
+   
 
 
 ]
