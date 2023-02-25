@@ -7,3 +7,7 @@ class agregarCurso(forms.ModelForm):
         model= gestionCursos
         fields=('nomCurso','descripcion','duracion','estado','nombreDpto')
 
+class agregarDpto(forms.ModelForm):
+    class Meta:
+        model= Dpto
+        fields=('nombreDpto',)
