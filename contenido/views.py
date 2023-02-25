@@ -17,10 +17,6 @@ def home(request):
     return render(request,'home.html',context)
 
 #Vista Principal de Dpto
-def Departa(request):
-    Depa=Dpto.objects.all()
-    context={'Depa':Depa}
-    return render(request,'Deptor.html',context)
 
 
 def agregar(request):
@@ -54,18 +50,25 @@ def eliminar(request,curso_id):
 #VISTAS DE DEPARTAMENTO
 def eliminarDpto(request,dpto_id):
     Depto=Dpto.objects.get(id=dpto_id)
-    print(Depto)
-
-    Curso=gestionCursos.objects.get(nombreDpto_id=dpto_id)
-    print(Curso)
-
-    if Curso:
+    consulta=gestionCursos.objects.filter(nombreDpto=dpto_id)
+    if consulta:
         MessageBox.showerror("Error", 
-    "Este departamento no se puede eliminar porque tiene cursos asociados")
-        # return redirect('Deptor')
+    "El departamento tiene cursos asignados.")
+        return redirect('homedpto')
     else:
-     Depto.delete()
-     return redirect('Deptor')
+        resultado = MessageBox.askquestion("Eliminar", 
+    "¿Está seguro que desea Eliminar este departamento?")
+
+        if resultado == "yes":
+            Depto.delete()
+            MessageBox.showerror("OK", 
+            "El departamento ha sido eliminado.")
+    return redirect('homedpto')
+
+def homedpto(request):
+    Dptos=Dpto.objects.all()
+    context={'Dptos':Dptos}
+    return render(request,'Deptor.html',context)
 # def editarDpto(request,curso_id):
 #     Curso=gestionCursos.objects.get(id=curso_id)
 #     if request.method=="POST":
