@@ -83,3 +83,15 @@ def agregarDptos(request):
         formDpto=agregarDpto()
     context={'formDpto':formDpto}
     return render(request,'agregarDpto.html',context)
+
+def editarDpto(request,dpto_id):
+    Depto=Dpto.objects.get(id=dpto_id)
+    if request.method=="POST":
+        dpto=agregarDpto(request.POST, instance=Depto)
+        if dpto.is_valid():
+            dpto.save()
+        return redirect("homedpto")
+    else:
+        dpto=agregarDpto(instance=Depto)
+    context={"dpto":dpto}
+    return render(request,"editarDpto.html",context)

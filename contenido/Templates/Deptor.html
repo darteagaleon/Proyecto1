@@ -25,7 +25,7 @@
                             <th scope="row">{{dpto.id}}</th>
                             <th scope="row">{{dpto.nombreDpto}}</th>
                             <td>
-                                <button class="editar"><a href="">Editar</a></button>
+                                <button class="editar"><a href="{% url 'editarDpto' dpto.id %}">Editar</a></button>
                                 <button class="eliminar"><a href="{% url 'eliminarDpto' dpto.id %}">Eliminar</a></button>
                             </td>
                         </tr>
