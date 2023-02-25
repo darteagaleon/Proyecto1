@@ -1,3 +1,39 @@
-#container {
-    border: solid 5px red;
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    background: linear-gradient(to bottom, #74bc54, #76bb58, #78ba5b, #7ab85f, #7cb762, #80b767, #84b76d, #88b772, #8eb87b, #95ba84, #9bbb8c, #a1bc95);    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.agregar{
+    background-color: #05a14f ;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.agregar:hover{
+    background-color: #76bb58;
+    border: 1px solid #05a14f;
 }

@@ -4,24 +4,27 @@
 <link rel="stylesheet" type="text/css"  href=" {% static 'css/agregar.css' %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div class="container text-center" id="container">
-    <form method="post">
-        {% csrf_token %}
-         <!-- Se installa libreria desde consola pip install django-widget-tweaks
-        y se agrega el settings en install apps 'widget_tweaks', 
-        este permite colocarle estilos al formulario-->
-        {% load widget_tweaks %}
-        <div class="form-group" >
-            <!-- se crea un ciclo el cual recorre los campos del formulario
-            para crear los label -->
-            {% for field in form %}
-            <label for="{{ field.id_for_label}}">{{field.label}}</label>
-            <!-- crea los inputs de cada label -->
-            {% render_field field class="form-control" %}
-            {% endfor %}
-        </div>
-        <button type="submit" class="btn btn-primary"> Agregar Tarea </button>
-    </form>
+<div class="login-page">
+    <div class="form">    
+        <form method="post">
+            {% csrf_token %}
+            <!-- Se installa libreria desde consola pip install django-widget-tweaks
+            y se agrega el settings en install apps 'widget_tweaks', 
+
+            este permite colocarle estilos al formulario-->
+            {% load widget_tweaks %}
+            <div class="form-group" >
+                <!-- se crea un ciclo el cual recorre los campos del formulario
+                para crear los label, El form que esta en el ciclo for sale de la vista agregar -->
+                {% for field in form %}
+                <label for="{{ field.id_for_label}}">{{field.label}}</label>
+                <!-- crea los inputs de cada label -->
+                {% render_field field class="form-control" %}
+                {% endfor %}
+            </div>
+            <button type="submit" class="agregar"> Agregar Tarea </button>
+        </form>
+    </div>
 </div>
 {% endblock %}
 
