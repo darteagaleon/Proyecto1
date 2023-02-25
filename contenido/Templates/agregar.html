@@ -7,8 +7,18 @@
 <div class="container text-center" id="container">
     <form method="post">
         {% csrf_token %}
+         <!-- Se installa libreria desde consola pip install django-widget-tweaks
+        y se agrega el settings en install apps 'widget_tweaks', 
+        este permite colocarle estilos al formulario-->
+        {% load widget_tweaks %}
         <div class="form-group" >
-            {{ form }}
+            <!-- se crea un ciclo el cual recorre los campos del formulario
+            para crear los label -->
+            {% for field in form %}
+            <label for="{{ field.id_for_label}}">{{field.label}}</label>
+            <!-- crea los inputs de cada label -->
+            {% render_field field class="form-control" %}
+            {% endfor %}
         </div>
         <button type="submit" class="btn btn-primary"> Agregar Tarea </button>
     </form>
