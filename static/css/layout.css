@@ -1,43 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #04943c;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #353a40;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.navlinks{
+.navlinks {
     border: 1px solid red;
     font-size: 20px;
-    display: flex;
-    margin-left: 68.7%;
+
 }
+
 .navbar-toggler {
     border: #04943c solid 1px;
 }
 
-#navbarSupportedContent{
+#navbarSupportedContent {
     border: solid blue 1px;
 }
+
 /* aqui se cambia el color a los "a" del navbar */
-#titulos a{
+#titulos a {
     color: white;
     font-size: 20px;
 }
-.nav-item .dropdown-menu{
-    background-color: #353a40;
 
+#desplegable {
+    background-color: #353a40;
 }
-.logo{
+
+.logo {
     border: 1px solid red;
-    margin: 0 auto;
 }
+
+.navbar-toggler-icon {
+    background-color: #04943c;
+}
+
 /* --------------------------- estilos de los botones de incio y cerrar sesion ---------------------*/
 
-    #login,
-    #signup {
+#login,
+#signup {
     border-radius: 5px;
     padding: 4px 5px;
     margin: 5px;
-    display: block;    
+    display: block;
 }
 
 
@@ -59,12 +80,12 @@
 
 /* parte de responsive para los links */
 @media (max-width: 800px) {
-    .navlinks  {
-        margin-right: 0 auto;
-        position: relative;
-        left: -100px;
+    h1 {
+        margin: 0 auto;
     }
-    .logo{
+
+    .logo {
         width: 75px;
-    } 
+        margin: 0 auto;
+    }
 }
