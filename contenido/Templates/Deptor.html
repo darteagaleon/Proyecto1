@@ -25,19 +25,13 @@
                             <th scope="row">{{dpto.id}}</th>
                             <th scope="row">{{dpto.nombreDpto}}</th>
                             <td>
-                                <!-- <button class="editar"><a href="{% url 'editarDpto' dpto.id %}">Editar</a></button> -->
-                                <button class="editar" onclick="editarDpto({{dpto.id}},'{{dpto.nombreDpto}}')">Editar</button> 
+                                <button class="editar"><a href="{% url 'editarDpto' dpto.id %}">Editar</a></button>
                                 <button class="eliminar"><a href="{% url 'eliminarDpto' dpto.id %}">Eliminar</a></button>
                             </td>
                         </tr>
                     </tbody>
                     {% endfor %}
                 </table>
-            </div>
-            <!-- Crear un formulario para editar los Departamentos -->
-            <div id="formEditarDpto">
-
-
             </div>
         </div>
     </div>
