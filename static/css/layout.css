@@ -52,7 +52,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* --------------------------- estilos de los botones de incio y cerrar sesion ---------------------*/
-
 #login,
 #signup {
     border-radius: 5px;
@@ -72,10 +71,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 #signup a {
     color: #ED413E;
+    text-decoration: none;
 }
 
 #login a {
     color: #04943c;
+    text-decoration: none;
 }
 
 /* parte de responsive para los links */

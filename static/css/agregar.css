@@ -25,7 +25,10 @@
     box-sizing: border-box;
     font-size: 14px;
 }
-
+.third a{
+    color: white;
+    font-weight: bold
+}
 .third {
     border-color: #3498db;
     color: #fff;
@@ -64,4 +67,9 @@
 #id_nombreDpto:hover{
     background-color:#daddd8;
     border-color: #74bc54 2px solid;
+}
+@media (max-width: 800px) {
+    h1 {
+        margin: 0 auto;
+    }
 }
