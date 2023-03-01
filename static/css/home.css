@@ -8,7 +8,8 @@
         margin:0 auto;      
         width:360px;
         padding-bottom: 30px;
-    }
+        font-family: Poppin;
+    }   
 table{
     background: linear-gradient(to right, #ecf2f6, #eef1f7, #f1f0f7, #f5f0f6, #f8eff3);
 }

@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <div class="login-page">
+    <h1>Añadir Cursos</h1>
     <div class="form">    
         <form method="post">
             {% csrf_token %}
@@ -22,9 +23,21 @@
                 {% render_field field class="form-control" %}
                 {% endfor %}
             </div>
-            <button type="submit" class="agregar"> Agregar Tarea </button>
+            <button type="submit" class="btn third">Agregar</button>
+
+            {% comment %} <button  class="agregar"> Agregar Tarea </button> {% endcomment %}
         </form>
     </div>
 </div>
+<style>
+    h1{
+        position:relative;
+        color: #00a650;
+        top:20px;
+        margin:0 auto;      
+        width:360px;
+        padding-bottom: 30px;
+    }  
+</style>
 {% endblock %}
 
