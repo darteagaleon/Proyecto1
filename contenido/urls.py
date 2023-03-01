@@ -16,7 +16,7 @@ urlpatterns = [
     path('homedpto/', views.homedpto,name="homedpto"),
     path('eliminarDpto/<int:dpto_id>/', views.eliminarDpto,name="eliminarDpto"),
     path('agregarDpto/', views.agregarDptos,name="agregarDpto"),
-    path('editarDpto/<int:dpto_id>/', views.editarDpto,name="editarDpto"),
+    path('editarDpto/', views.editarDpto, name="editarDpto"),
 
     
 
