@@ -43,10 +43,6 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #353a40;
 }
 
-.logo {
-    border: 1px solid red;
-}
-
 .navbar-toggler-icon {
     background-color: #04943c;
 }
