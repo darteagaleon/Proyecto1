@@ -6,12 +6,14 @@
         color: #00a650;
         top:20px;
         margin:0 auto;      
-        width:360px;
+        width:270px;
         padding-bottom: 30px;
         font-family: Poppin;
     }   
 table{
-background-color: #00a650;}
+background-color: #00a650;
+position:relative;
+top: 50px;}
 #tablam{
     /* border: #c80a05 solid 5px; */
     border-spacing: 0;
