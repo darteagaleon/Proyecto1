@@ -1,75 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #04943c;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #353a40;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    background-color: #353836;
+.navlinks {
+    border: 1px solid red;
+    font-size: 20px;
 
 }
-.navbar {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1d1f1d;
-    color: white;
-    position:static;
+
+.navbar-toggler {
+    border: #04943c solid 1px;
 }
-.navbar-links {
-    height: 100%;
+
+#navbarSupportedContent {
+    border: solid blue 1px;
+}
+
+/* aqui se cambia el color a los "a" del navbar */
+#titulos a {
+    color: white;
     font-size: 20px;
 }
 
-.navbar-links ul {
-    
-    list-style: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
+#desplegable {
+    background-color: #353a40;
 }
 
-.navbar-links ul a {
-    color: rgb(250, 249, 249);
-    text-decoration: none;
+.logo {
+    border: 1px solid red;
 }
 
-.navbar-links ul li {
-    list-style: none;
-    padding: 5px;
-    margin-left: 10px;
+.navbar-toggler-icon {
+    background-color: #04943c;
 }
 
-.navbar-links ul li {
-    display: block;
-    text-decoration: none;
-    border-radius: 10px;
-
-    padding: 10px;
-}
-
-.brand-title,
-ul li:hover {
-    transform: scale(1.1);
-    /*codigo para que el texto resalte cuando se pasa el cursor por encima de el*/
-    transition: 0.3s;
-}
-
+/* --------------------------- estilos de los botones de incio y cerrar sesion ---------------------*/
 #login,
 #signup {
     border-radius: 5px;
-    padding: 2px 4px;
-    margin-bottom: 5px;
+    padding: 4px 5px;
+    margin: 5px;
+    display: block;
 }
+
 
 #login {
     border: 1px solid #04943c;
@@ -81,71 +71,22 @@ ul li:hover {
 
 #signup a {
     color: #ED413E;
+    text-decoration: none;
 }
 
 #login a {
     color: #04943c;
+    text-decoration: none;
 }
 
-.toggle-button {
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: rgb(250, 245, 245);
-    border-radius: 10px;
-}
-
-/*----CODIGO PARA EL RESPONSIVE DEL BAR MENU*/
+/* parte de responsive para los links */
 @media (max-width: 800px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        position:fixed;;
+    h1 {
+        margin: 0 auto;
     }
 
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: 1rem;
-        margin-top: 30px;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-    .logo{
+    .logo {
         width: 75px;
-    } 
-}
-
-/* ---------------------------------- boton dropdown ----------------------------------------*/
-
-.dropdown-menu ul {
-    background-color: #ffffff00;
+        margin: 0 auto;
+    }
 }
