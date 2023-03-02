@@ -11,20 +11,21 @@
         font-family: Poppin;
     }   
 table{
-    background: linear-gradient(to right, #ecf2f6, #eef1f7, #f1f0f7, #f5f0f6, #f8eff3);
-}
+background-color: #00a650;}
 #tablam{
-    border-radius: 15px;
+    /* border: #c80a05 solid 5px; */
+    border-spacing: 0;
+    border-radius: 25px;
 
 }
 
     thead{
-        background-color: #00a650;
         color: white;
         text-align: center;
         text-decoration: none;
         text-shadow: 1px 1px 1px black;
         font-size: 20px;
+        background-color: r;
     }
 
     tbody{

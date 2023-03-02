@@ -20,18 +20,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .navlinks {
-    border: 1px solid red;
     font-size: 20px;
-
 }
 
-.navbar-toggler {
-    border: #04943c solid 1px;
-}
-
-#navbarSupportedContent {
-    border: solid blue 1px;
-}
 
 /* aqui se cambia el color a los "a" del navbar */
 #titulos a {
