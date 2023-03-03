@@ -38,6 +38,8 @@
     box-shadow: 0 0 40px 40px #74bc54 inset, 0 0 0 0 #74bc54;
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
+    position: relative;
+    top: 20px;
 }
 
 .third:hover {
