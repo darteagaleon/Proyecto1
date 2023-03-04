@@ -15,7 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="{% static 'controlador/ajax.js' %}"></script>
+    <!-- Enlazaba a archivo JavaScript(AJAX) -->
+    <!-- <script src="{% static 'controlador/ajax.js' %}"></script> -->
     
 </head>
 
@@ -39,11 +40,11 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">Opciones</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="desplegable">
-                        <li id="titulos" class="titulos2"><a class="dropdown-item" href="{% url 'agregar' %}">Añadir Cursos</a></li>
+                        <li id="titulos" class="titulos2"><a class="dropdown-item" href="{% url 'agregar' %}">Agregar Cursos</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li id="titulos"><a class="dropdown-item" href="{% url 'agregarDpto' %}">Añadir Dpto</a></li>
+                        <li id="titulos"><a class="dropdown-item" href="{% url 'agregarDpto' %}">Agregar Dpto</a></li>
                             <hr class="dropdown-divider">
                         </li>
                         <li id="titulos"><a class="dropdown-item" href="{% url 'homedpto' %}">Consultar Dpto</a></li>

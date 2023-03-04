@@ -22,8 +22,9 @@
                             <th scope="row">{{dpto.id}}</th>
                             <th scope="row">{{dpto.nombreDpto}}</th>
                             <td>
-
-                                <button class="editar" onclick="editarDpto({{dpto.id}},'{{dpto.nombreDpto}}')">Editar</button> 
+                                <!-- Ruta para realizar ajax -->
+                                <!-- <button class="editar" onclick="editarDpto({{dpto.id}},'{{dpto.nombreDpto}}')">Editar</button>  -->
+                                <button class="editar"><a href="{% url 'editarDpto' dpto.id %}">Editar</a></button>
                                 <button class="eliminar"><a href="{% url 'eliminarDpto' dpto.id %}">Eliminar</a></button>
                             </td>
                         </tr>
@@ -40,16 +41,9 @@
     </div>
 </main>
 <style>
-    h1{
-        position:relative;
+    body {
         color: black;
-        top:20px;
-        margin:0 auto;      
-        width:400px;
-        padding-bottom: 30px;
-    }  
-    body{
-        background-color: #e2e2e5;
+
     }
     #tablam{
         margin: 0px auto;
@@ -64,7 +58,9 @@
     }
     .celdasb .celdasp{
         margin: 0px auto;}
-
+    h1{
+        width:390px; 
+        top:30px;   }
 </style>
 
 {% endblock %}

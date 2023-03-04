@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css"  href=" {% static 'css/agregar.css' %}">
 
 <div class="login-page">
-    <h1>Añadir Departamento</h1>
+    <h1>Agregar Departamento</h1>
     <div class="form">    
         <form method="post">
             {% csrf_token %}
@@ -22,21 +22,18 @@
                 {% render_field field class="form-control" %}
                 {% endfor %}
             </div>
-            <button type="submit" class="btn third">Editar</button>
+            <button type="submit" class="btn third">Agregar</button>
         </form>
     </div>
 </div>
 <style>
     h1{
         position:relative;
-        color: black;
+        color: #00a650;
         top:20px;
-        margin:0 auto;      
-        width:360px;
+        left:-4%;
+        width:422px;
         padding-bottom: 30px;
     }  
-    body{
-        background-color: #e2e2e5;
-    }
 </style>
 {% endblock %}

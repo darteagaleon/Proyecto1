@@ -6,6 +6,8 @@ from tkinter import *
 from tkinter import messagebox as MessageBox
 from django.http import JsonResponse
 import json
+import tkinter as tk
+
 
 # vista para el logo
 def layout(request):
@@ -86,38 +88,38 @@ def agregarDptos(request):
     return render(request,'agregarDpto.html',context)
 
 #Recibe el mensaje Ajax y actualiza el registro
-def editarDpto(request):
-    is_ajax = request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
-    print('is_ajax')
-    if is_ajax:
-        if request.method == 'POST' :
-            #Toma la data enviada por el cliente
-            data= json.load(request)    #Convertir a diccionario de Python
-            id = data.get('id')
-            nuevoNombre = data.get('nuevoNombre')
-            try:
-                regDpto = Dpto.objects.get(id=id)
-                regDpto.nombreDpto=nuevoNombre
-                regDpto.save()
-                context = {'mensaje': 'Departamento actualizado'}
-                return JsonResponse(context)
-            except:
-                context = {'mensaje': 'Error: Registro no encontrado'}
-                return JsonResponse(context)
+# def editarDpto(request):
+#     is_ajax = request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+#     print('is_ajax')
+#     if is_ajax:
+#         if request.method == 'POST' :
+#             #Toma la data enviada por el cliente
+#             data= json.load(request)    #Convertir a diccionario de Python
+#             id = data.get('id')
+#             nuevoNombre = data.get('nuevoNombre')
+#             try:
+#                 regDpto = Dpto.objects.get(id=id)
+#                 regDpto.nombreDpto=nuevoNombre
+#                 regDpto.save()
+#                 context = {'mensaje': 'Departamento actualizado'}
+#                 return JsonResponse(context)
+#             except:
+#                 context = {'mensaje': 'Error: Registro no encontrado'}
+#                 return JsonResponse(context)
 
-        else:
-            return homedpto(request)
-    else:
-        return homedpto(request)
-
-# def editarDpto(request,dpto_id):
-#     Depto=Dpto.objects.get(id=dpto_id)
-#     if request.method=="POST":
-#         dpto=agregarDpto(request.POST, instance=Depto)
-#         if dpto.is_valid():
-#             dpto.save()
-#         return redirect("homedpto")
+#         else:
+#             return homedpto(request)
 #     else:
-#         dpto=agregarDpto(instance=Depto)
-#     context={"dpto":dpto}
-#     return render(request,"editarDpto.html",context)
+#         return homedpto(request)
+
+def editarDpto(request,dpto_id):
+    Depto=Dpto.objects.get(id=dpto_id)
+    if request.method=="POST":
+        dpto=agregarDpto(request.POST, instance=Depto)
+        if dpto.is_valid():
+            dpto.save()
+        return redirect("homedpto")
+    else:
+        dpto=agregarDpto(instance=Depto)
+    context={"dpto":dpto}
+    return render(request,"editarDpto.html",context)
