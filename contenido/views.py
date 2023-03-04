@@ -68,7 +68,8 @@ def eliminarDpto(request,dpto_id):
         return redirect('homedpto')
     else:
         Depto.delete()
-    return redirect('home')
+        messages.success(request, "Eliminado con exito")
+    return redirect('homedpto')
 
     #     ("Eliminar", 
     # "¿Está seguro que desea Eliminar este departamento?")

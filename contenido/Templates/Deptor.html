@@ -25,7 +25,8 @@
                                 <!-- Ruta para realizar ajax -->
                                 <!-- <button class="editar" onclick="editarDpto({{dpto.id}},'{{dpto.nombreDpto}}')">Editar</button>  -->
                                 <button class="editar"><a href="{% url 'editarDpto' dpto.id %}">Editar</a></button>
-                                <button class="eliminar"><a href="{% url 'eliminarDpto' dpto.id %}">Eliminar</a></button>
+                                <!-- Llamando funcion de Js -->
+                                <button class="eliminar"onclick="eliminarDpto({{dpto.id}})"><a href="#">Eliminar</a></button>   
                             </td>
                         </tr>
                     </tbody>
@@ -62,5 +63,8 @@
         width:390px; 
         top:30px;   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{% static 'controlador/eliminarDpto.js' %}"></script>
+<!-- {% static 'controlador/ajax.js' %} -->
 
 {% endblock %}
