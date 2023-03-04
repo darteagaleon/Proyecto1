@@ -6,7 +6,7 @@ from tkinter import *
 from tkinter import messagebox as MessageBox
 from django.http import JsonResponse
 import json
-import tkinter as tk
+from django.contrib import messages
 
 
 # vista para el logo
@@ -62,18 +62,22 @@ def eliminarDpto(request,dpto_id):
     Depto=Dpto.objects.get(id=dpto_id)
     consulta=gestionCursos.objects.filter(nombreDpto=dpto_id)
     if consulta:
-        MessageBox.showerror("Error", 
-    "El departamento tiene cursos asignados.")
+        messages.warning(request, "Atencion: El departamento tiene cursos asignados")
+    #    ("Error", 
+    # "El departamento tiene cursos asignados.")
         return redirect('homedpto')
     else:
-        resultado = MessageBox.askquestion("Eliminar", 
-    "¿Está seguro que desea Eliminar este departamento?")
+        Depto.delete()
+    return redirect('home')
 
-        if resultado == "yes":
-            Depto.delete()
-            MessageBox.showerror("OK", 
-            "El departamento ha sido eliminado.")
-    return redirect('homedpto')
+    #     ("Eliminar", 
+    # "¿Está seguro que desea Eliminar este departamento?")
+
+    #     if resultado == "yes":
+    #         Depto.delete()
+    #         MessageBox.showerror("OK", 
+    #         "El departamento ha sido eliminado.")
+    # return redirect('homedpto')
 
 #vista para agregar un departamento
 def agregarDptos(request):

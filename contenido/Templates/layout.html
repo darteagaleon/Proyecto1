@@ -15,12 +15,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Enlazaba a archivo JavaScript(AJAX) -->
     <!-- <script src="{% static 'controlador/ajax.js' %}"></script> -->
     
 </head>
+{% if messages %}
+    {% for m in messages %}
+            <script>
+                Swal.fire({
+                    "title": "Alerta",
+                })
+            </script>
+    {% endfor %}
+{% endif %}
 
-<body>
+    <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="container">
         <div class="container-fluid">
         <a href="{% url 'home' %}" class="logo"><img class="logo" src="{% static "img/Logo-Web-Cyres-de-Colombia-removebg-preview.ico" %}"></a>
