@@ -66,6 +66,21 @@ body::-webkit-scrollbar-thumb:hover {
     text-decoration: none;
 }
 
+button #lista {
+    background-color: #04943c;
+}
+
+
+
+
+.dropdown li a {
+    color: #00a650 !important;
+}
+
+.navbar-default .navbar-nav>.open>a.dropdown-toggle {
+    background-color: #f4511e !important;
+}
+
 /* parte de responsive para los links */
 @media (max-width: 800px) {
     h1 {
@@ -76,4 +91,6 @@ body::-webkit-scrollbar-thumb:hover {
         width: 75px;
         margin: 0 auto;
     }
+
+
 }
