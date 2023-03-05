@@ -26,6 +26,7 @@ def agregar(request):
         form= agregarCurso(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Creado con exito")
             return redirect('home')
     else:
         form= agregarCurso()
@@ -39,6 +40,7 @@ def editar(request,curso_id):
         form=agregarCurso(request.POST, instance=Curso)
         if form.is_valid():
             form.save()
+            messages.success(request, "Editado con exito")
         return redirect("home")
     else:
         form=agregarCurso(instance=Curso)
@@ -49,6 +51,7 @@ def editar(request,curso_id):
 def eliminar(request,curso_id):
     Curso=gestionCursos.objects.get(id=curso_id)
     Curso.delete()
+    messages.success(request, "Eliminado con exito")
     return redirect('home')
 
 #vista para listar los departamentos
@@ -86,6 +89,7 @@ def agregarDptos(request):
         formDpto= agregarDpto(request.POST)
         if formDpto.is_valid():
             formDpto.save()
+            messages.success(request, "Creado con exito")
             return redirect('homedpto')
     else:
         formDpto=agregarDpto()
@@ -123,6 +127,7 @@ def editarDpto(request,dpto_id):
         dpto=agregarDpto(request.POST, instance=Depto)
         if dpto.is_valid():
             dpto.save()
+            messages.success(request, "Editado con exito")
         return redirect("homedpto")
     else:
         dpto=agregarDpto(instance=Depto)
