@@ -72,8 +72,10 @@
     background-color:#daddd8;
     border-color: #74bc54 2px solid;
 }
+/* resposive para que el texto se centre cuando se hace responsive */
 @media (max-width: 800px) {
     h1 {
         margin: 0 auto;
+        
     }
 }

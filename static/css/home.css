@@ -12,16 +12,13 @@
     }   
 table{
 background-color: #00a650;
-position:relative;
-top: 50px;}
+}
 #tablam{
-    /* border: #c80a05 solid 5px; */
     border-spacing: 0;
     border-radius: 25px;
+} 
 
-}
-
-    thead{
+thead{
         color: white;
         text-align: center;
         text-decoration: none;
